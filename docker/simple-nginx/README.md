@@ -3,7 +3,8 @@
 This micro project shows you how to run a simple web service "Nginx" on docker using IaC approach. we are simulating a real environment. Admin installs the application on a remote server.
 
 ## Requirements
-Ubuntu server >20.04 (This is the remote server)
+Ubuntu server > 20.04 (This is the remote server)
+
 Your laptop (MacOSX)
 
 ## 1- Install docker on linux

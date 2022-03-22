@@ -7,4 +7,5 @@ I have written a Terraform code to:
 
 2nd: Install and configure jenkins using Ansible
 
-NOTE: All this is done using one Terraform code.
+**NOTE: All this is done using one Terraform code.**
+

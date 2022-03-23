@@ -1,7 +1,7 @@
 # Terraform-vsphere-ansible
 
 <p align="center">
- <img alt="vsphere Logo" src="image/vmware_vsphere.png">
+ <img alt="vsphere Logo" src="image/ansible-tf_banner.png">
 </p>
 
 

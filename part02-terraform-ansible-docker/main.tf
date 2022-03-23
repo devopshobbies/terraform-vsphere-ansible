@@ -96,27 +96,28 @@ resource "vsphere_virtual_machine" "standalone" {
 
 # In this section we are going to deal with Ansible in the VM we created before.
 resource "local_file" "vm_ip" {
-    content  = vsphere_virtual_machine.standalone.default_ip_address
-    filename = "vm_ip.txt"
+  content  = vsphere_virtual_machine.standalone.default_ip_address
+  filename = "vm_ip.txt"
 }
 
 resource "null_resource" "nullremote1" {
-depends_on = [vsphere_virtual_machine.standalone] 
-connection {
- type     = "ssh"
- user     = "root"
- password = "${var.password}"
- host     = "${var.host}" 
+  depends_on = [vsphere_virtual_machine.standalone]
+  connection {
+    type     = "ssh"
+    user     = "root"
+    password = var.password
+    host     = var.host
+  }
 }
 provisioner "file" {
-    source      = "vm_ip.txt"
-    destination = "hosts.txt"
-       }
+  source      = "vm_ip.txt"
+  destination = "hosts.txt"
+}
 # Run command on the remote vm
 provisioner "local-exec" {
- inline = [
- "ansible-playbook jenkins.yml"
-]
+  inline = [
+    "ansible-playbook jenkins.yml"
+  ]
 }
 output "my_ip_address" {
   value = vsphere_virtual_machine.standalone.default_ip_address

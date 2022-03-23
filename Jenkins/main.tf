@@ -110,20 +110,11 @@ connection {
 }
 provisioner "file" {
     source      = "vm_ip.txt"
-    destination = "/root/vm_ip.txt"
+    destination = "hosts.txt"
        }
-provisioner "file" {
-    source      = "ansible.yml"
-    destination = "/root/ansible.yml"
-       }
-}
-
 # Run command on the remote vm
-provisioner "remote-exec" {
+provisioner "local-exec" {
  inline = [
- "apt update",
- "apt install ansible -y",
- "cd /root",
  "ansible-playbook jenkins.yml"
 ]
 }

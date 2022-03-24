@@ -1,11 +1,28 @@
-# Provision VM + Ansible + Jenkins
-This Tutorial is going to show you how we can fully automate jenkins installation in our environment.
+# Terraform-vsphere-ansible
 
-I have written a Terraform code to:
+<p align="center">
+ <img alt="vsphere Logo" src="image/ansible-tf_banner.png">
+</p>
 
-1st: Provision a VM in ESXi (Ubuntu)
 
-2nd: Install and configure jenkins using Ansible
+## Published articles:
 
-**NOTE: All this is done using one Terraform code.**
+ - [Terraform Tutorial - Part 1 - Create Jenkins with terraform and ansible]()
 
+ - [Terraform Tutorial - Part 2 - Create docker with terraform and ansible]()
+
+
+
+## Contributions:
+
+All contributions are welcomed. Help me to enrich this repository.
+
+If you find any **bugs** in the examples, please file an issue.
+
+### TODO:
+
+ - [ ] Adding Elastic
+ - [ ] Adding Prometheus
+ - [ ] Adding Grafana
+ - [ ] Adding consul
+ - [ ] Adding vault

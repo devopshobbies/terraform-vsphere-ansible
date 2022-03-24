@@ -113,10 +113,10 @@ provisioner "file" {
   source      = "vm_ip.txt"
   destination = "hosts.txt"
 }
-# Run command on the remote vm
+# Run command on the local machine to run Ansible
 provisioner "local-exec" {
   inline = [
-    "ansible-playbook jenkins.yml"
+    "ansible-playbook playbook.yml"
   ]
 }
 output "my_ip_address" {

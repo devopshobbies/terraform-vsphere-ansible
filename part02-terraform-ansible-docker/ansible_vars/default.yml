@@ -1,0 +1,7 @@
+---
+create_containers: 2
+default_container_name: docker
+default_container_image: ubuntu
+default_container_command: sleep 1h
+
+#this will create 2 containers named docker with ubuntu image and at the start of the container it will use "sleep" command.

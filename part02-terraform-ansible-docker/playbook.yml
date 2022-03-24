@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   vars_files:
-    - vars/default.yml
+    - ansible_vars/default.yml
 
   tasks:
     - name: Install aptitude using apt

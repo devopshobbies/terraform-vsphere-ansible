@@ -1,4 +1,4 @@
-# Terraform-vsphere-ansible
+# Terraform-Vsphere-Ansible
 
 <p align="center">
  <img alt="vsphere Logo" src="image/ansible-tf_banner.png">

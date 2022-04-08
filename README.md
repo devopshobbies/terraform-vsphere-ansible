@@ -11,6 +11,8 @@
 
  - [Terraform Tutorial - Part 2 - Create Docker with terraform and ansible]()
 
+ - [Terraform Tutorial - Part 3 - Create Elasticsearch with terraform and ansible]()
+
  - [Terraform Tutorial - Part 4 - Create Grafana with terraform and ansible]()
 
 ## Contributions:
@@ -21,7 +23,6 @@ If you find any **bugs** in the examples, please file an issue.
 
 ### TODO:
 
- - [ ] Adding Elastic
  - [ ] Adding Prometheus
  - [ ] Adding consul
  - [ ] Adding vault

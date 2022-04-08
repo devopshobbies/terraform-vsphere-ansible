@@ -1,5 +1,5 @@
 ---
-- hosts: masters
+- hosts: all
   roles:
    - role: elastic.elasticsearch
   vars:

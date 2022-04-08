@@ -1,0 +1,51 @@
+---
+- hosts: masters
+  roles:
+   - role: elastic.elasticsearch
+  vars:
+   es_heap_size: "8g"
+   es_config:
+     cluster.name: "my_cluster"
+     network.host: 0
+     cluster.initial_master_nodes: "esmaster1,esmaster2,esmaster3"
+     discovery.seed_hosts: "esmaster1:9300,esmaster2:9300,esmaster3:9300"
+     http.port: 9200
+     node.data: false
+     node.master: true
+     node.ingest: false
+     node.ml: false
+     cluster.remote.connect: false
+     bootstrap.memory_lock: true
+- hosts: data
+  roles:
+    - role: elastic.elasticsearch
+  vars:
+    es_data_dirs:
+      - "/var/lib/elasticsearch"
+    es_heap_size: "30g"
+    es_config:
+      cluster.name: "my_cluster"
+      network.host: 0
+      discovery.seed_hosts: "esmaster1:9300,esmaster2:9300,esmaster3:9300"
+      http.port: 9200
+      node.data: true
+      node.master: false
+      node.ml: false
+      bootstrap.memory_lock: true
+      indices.recovery.max_bytes_per_sec: 100mb
+- hosts: coordinating
+  roles:
+    - role: elastic.elasticsearch
+  vars:
+    es_heap_size: "16g"
+    es_config:
+      cluster.name: "my_cluster"
+      network.host: 0
+      discovery.seed_hosts: "esmaster1:9300,esmaster2:9300,esmaster3:9300"
+      http.port: 9200
+      node.data: false
+      node.master: false
+      node.ingest: false
+      node.ml: false
+      cluster.remote.connect: false
+      bootstrap.memory_lock: true
